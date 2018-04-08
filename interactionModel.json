@@ -1,0 +1,81 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "movie descriptor",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "Cancel",
+                        "Cancel this request"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "Help me"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "Stop"
+                    ]
+                },
+                {
+                    "name": "describe_movie",
+                    "slots": [
+                        {
+                            "name": "movie_name",
+                            "type": "AMAZON.Movie",
+                            "samples": [
+                                "the movie is {movie_name}",
+                                "{movie_name}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "tell me about {movie_name}",
+                        "tell me a short summary of {movie_name}",
+                        "summarize {movie_name}",
+                        "describe {movie_name}",
+                        "tell me more about {movie_name}",
+                        "tell me the summary of {movie_name}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "describe_movie",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "movie_name",
+                            "type": "AMAZON.Movie",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.936030590450.1004280514815"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.936030590450.1004280514815",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the movie name"
+                    }
+                ]
+            }
+        ]
+    }
+}
